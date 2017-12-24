@@ -14,7 +14,32 @@ var $source = webfont.src;
 
 (function($){
 	$(document).ready(function(){
-        $('.gallery').find('br').detach();
+		$('.gallery').find('br').detach();
+		
+		// Dynamic Image Sizing
+		ajaxurl = webfont.ajaxurl;
+		console.log(ajaxurl);
+		$('.portfolio-image').each(function() {
+			// get the image ratio
+			var ratio = new Image();
+			ratio.src = $(this).data('src');
+
+			// console.log(ratio);
+			
+			var targetEl = $(this),
+				ajaxData = {
+					action: 'resize_my_image', 
+					width: $(this).parent().width(), 
+					height: $(this).parent().width() * (ratio.height / ratio.width),
+					source: $(this).data('src')
+				};
+			// console.log(ajaxData);
+	
+			$.getJSON(ajaxurl, ajaxData, function(response) {
+				// console.log(response);
+				targetEl.attr('src', response.src);
+			});
+		});
 	});
 
 	// Window load event with minimum delay
