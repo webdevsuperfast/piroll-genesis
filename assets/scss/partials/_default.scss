@@ -92,27 +92,27 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 10px;
 }
 
-h1 {
+h1, .h1 {
 	@include pixel-rem(36);
 }
 
-h2 {
+h2, .h2 {
 	@include pixel-rem(30);
 }
 
-h3 {
+h3, .h3 {
 	@include pixel-rem(24);
 }
 
-h4 {
+h4, .h4 {
 	@include pixel-rem(20);
 }
 
-h5 {
+h5, .h5 {
 	@include pixel-rem(18);
 }
 
-h6 {
+h6, .h6 {
 	@include pixel-rem(16);
 }
 
