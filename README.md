@@ -1,4 +1,4 @@
-# Genesis Boilerplate
+# Piroll Genesis
 
-Genesis Boilerplate is yet another starter child theme for the Genesis Framework. It is built using Sass and Bourbon Sass Framework. Building theme assets have been made easy with Bower, NPM and Gulp.
+Piroll Genesis is a Genesis Framework child theme based on [Piroll](https://freebiesbug.com/psd-freebies/piroll-design-template-agencypersonal-portfolio/) free PSD template. 
   
