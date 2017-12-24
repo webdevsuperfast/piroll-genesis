@@ -1,6 +1,5 @@
 /* ## Site Navigation
 ----------------------------------------------------------------------------- */
-
 .genesis-nav-menu {
 	@include pixel-rem(16);
 	clear: both;
@@ -134,17 +133,6 @@
 	}
 }
 
-/* ### Header Navigation */
-.site-header {
-	.genesis-nav-menu {
-		li {
-			li {
-				margin-left: 0;
-			}
-		}
-	}
-}
-
 /* ### Primary Navigation */
 .nav-primary {
 	background-color: $nav-primary-background;
@@ -152,10 +140,31 @@
 	@include grid-media($sm) {
 		display: block;
 	}
+	.wrap {
+		@include grid-media($md) {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+		}
+	}
+	.logo {
+		@extend .h1;
+		margin-right: auto;
+		flex-shrink: 0;
+		color: $heading-color;
+		text-transform: uppercase;
+		&:hover {
+			text-decoration: none;
+			color: $link-color;
+		}
+	}
 	.genesis-nav-menu {
+		text-align: right;
 		a {
+			@include pixel-rem(12,12);
 			color: $nav-primary-color;
 			text-decoration: none;
+			text-transform: uppercase;
 			&:hover, &:focus {
 				color: $nav-primary-color-hover;
 			}
