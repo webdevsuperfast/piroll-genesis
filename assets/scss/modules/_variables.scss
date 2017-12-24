@@ -2,37 +2,49 @@
 $black: #000;
 $white: #fff;
 
+$colors: (
+    1: #dddddd,
+    2: #838383,
+    3: #bcbcbc,
+    4: #ffffff,
+    5: #10c9c3,
+    6: #141414,
+    7: #787878,
+    8: #171717,
+    9: #191919
+);
+
+// Base
+$base-font-size: 10px;
+$base-line-height: 24px;
+
 // Body
 $body-font-size: 16px;
-$body-font: "Source Sans Pro", sans-serif;
-$body-line-height: 1.625;
+$body-font: "Nunito Sans", sans-serif;
+$body-line-height: $base-line-height;
 $body-background: $white;
-$body-color: #2c3e50;
-$body-font-weight: 300;
+$body-color: map-get($colors, 7);
+$body-font-weight: 400;
 
 // Heading
-$heading-font: "Source Sans Pro", sans-serif;
-$heading-font-weight: 400;
-$heading-color: $body-color;
+$heading-font: "Montserrat", sans-serif;
+$heading-font-weight: 500;
+$heading-color: map-get($colors, 8);
 $heading-line-height: 1.2;
 
 // Link
-$link-color: #3498db;
+$link-color: map-get($colors, 5);
 $link-color-hover: $body-color;
 
 // Layout
 $margin: 30px;
 $width: 1140px;
 
-// Base
-$base-font-size: 10px;
-$base-line-height: 26px;
-
 // Border
-$border-color: #ecf0f1;
-$border-color-hover: #bdc3c7;
-$border-featured-color: #ecf0f1;
-$outline-color: #bdc3c7;
+$border-color: map-get($colors, 1);
+$border-color-hover: map-get($colors, 3);
+$border-featured-color: $border-color;
+$outline-color: $border-color-hover;
 
 // Horizontal Rule
 $horizontal-rule-color: $border-color;
@@ -44,7 +56,7 @@ $gallery-border-color-hover: $border-color-hover;
 // Inputs
 $input-font: $body-font;
 $input-font-weight: $body-font-weight;
-$input-background: #ecf0f1;
+$input-background: $white;
 $input-border-color: $border-color;
 $input-color: $body-color;
 $input-padding-x: $margin/2;
@@ -99,7 +111,7 @@ $subnav-color-hover: $link-color;
 $subnav-padding-x: $margin;
 $subnav-padding-y: $margin/2;
 
-$navextra-color: #fff;
+$navextra-color: $white;
 $navextra-padding-x: 0;
 $navextra-padding-y: $nav-padding-y;
 
