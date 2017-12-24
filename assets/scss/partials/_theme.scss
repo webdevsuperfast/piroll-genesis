@@ -1,0 +1,18 @@
+/* ## Theme
+----------------------------------------------------------------------------- */
+.home-featured {
+    @include pixel-rem(18,28);
+    background: map-get($colors, 10);
+    padding: 102px 0 97px;
+    letter-spacing: 0.1px;
+    text-align: center;
+    .widgettitle {
+        @include pixel-rem(38,84);
+        letter-spacing: 0.4px;
+        // margin-bottom: 32px;
+    }
+    .widget {
+        @include column(6/12);
+        @include move(3/12);
+    }
+}
