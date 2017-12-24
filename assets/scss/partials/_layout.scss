@@ -1,0 +1,129 @@
+/* ## Site Containers
+----------------------------------------------------------------------------- */
+.site-container, .site-header, .site-inner, .footer-widgets, .site-footer {
+	@include grid-container;
+}
+
+.site-inner, .wrap {
+	@include grid-container;
+	margin: 0 auto;
+	max-width: 90.625%;
+	@include grid-media($sm) {
+		max-width: 540px;
+	}
+	@include grid-media($md) {
+		max-width: 740px;
+	}
+	@include grid-media($lg) {
+		max-width: 940px;
+	}
+	@include grid-media($xl) {
+		max-width: $width;
+	}
+}
+
+.site-inner {
+	@include clearfix;
+	padding: $margin*2 0;
+}
+
+/* ### Header */
+.site-header {
+	.title-area {
+		@include grid-media($sm) {
+			@include column(4/12);
+		}
+		.header-full-width & {
+			width: 100%;
+		}
+	}
+	.widget-area {
+		@include grid-media($sm) {
+			@include column(8/12);
+		}
+	}
+}
+
+/* ## Wrapping div for .content and .sidebar-primary
+----------------------------------------------------------------------------- */
+.content {
+	@include grid-media($md) {
+		@include column(8/12);
+	}
+	.content-sidebar-sidebar &, .sidebar-content-sidebar &, .sidebar-sidebar-content & {
+		@include grid-media($md) {
+			@include column(7/12);
+		}	
+	}
+	.sidebar-content & {
+		@include grid-media($md) {
+			@include move(4/12);
+		}
+	}
+	.sidebar-content-sidebar & {
+		@include grid-media($md) {
+			@include move(2/12);
+		}
+	}
+	.sidebar-sidebar-content & {
+		@include grid-media($md) {
+			@include move(5/12);
+		}
+	}
+	.full-width-content & {
+		width: 100%;
+	}
+}
+
+/* ### Primary Sidebar */
+.sidebar-primary {
+	@include grid-media($md) {
+		@include column(4/12);
+	}
+	.content-sidebar-sidebar &, .sidebar-content-sidebar &, .sidebar-sidebar-content & {
+		@include grid-media($md) {
+			@include column(3/12);
+		}
+	}
+	.sidebar-sidebar-content & {
+		@include grid-media($md) {
+			@include move(-5/12);
+		}
+	}
+	.sidebar-content & {
+		@include grid-media($md) {
+			@include move(-8/12);
+		}
+	}
+	.sidebar-content-sidebar & {
+		@include grid-media($md) {
+			@include move(2/12);
+		}
+	}
+}
+
+/* ### Secondary Sidebar */
+.sidebar-secondary {
+	@include grid-media($md) {
+		@include column(2/12);
+	}
+	.sidebar-sidebar-content & {
+		@include grid-media($md) {
+			@include move(-10/12);
+		}
+	}
+	.sidebar-content-sidebar & {
+		@include grid-media($md) {
+			@include move(-10/12);
+		}
+	}
+}
+
+/* ### Footer Widgets */
+.footer-widgets {
+	.widget-area {
+		@include grid-media($md) {
+			@include column(4/12);
+		}
+	}
+}

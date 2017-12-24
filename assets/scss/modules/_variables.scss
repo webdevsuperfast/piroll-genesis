@@ -1,0 +1,200 @@
+// Base Color
+$black: #000;
+$white: #fff;
+
+// Body
+$body-font-size: 16px;
+$body-font: "Source Sans Pro", sans-serif;
+$body-line-height: 1.625;
+$body-background: $white;
+$body-color: #2c3e50;
+$body-font-weight: 300;
+
+// Heading
+$heading-font: "Source Sans Pro", sans-serif;
+$heading-font-weight: 400;
+$heading-color: $body-color;
+$heading-line-height: 1.2;
+
+// Link
+$link-color: #3498db;
+$link-color-hover: $body-color;
+
+// Layout
+$margin: 30px;
+$width: 1140px;
+
+// Base
+$base-font-size: 10px;
+$base-line-height: 26px;
+
+// Border
+$border-color: #ecf0f1;
+$border-color-hover: #bdc3c7;
+$border-featured-color: #ecf0f1;
+$outline-color: #bdc3c7;
+
+// Horizontal Rule
+$horizontal-rule-color: $border-color;
+
+// Gallery
+$gallery-border-color: $border-color;
+$gallery-border-color-hover: $border-color-hover;
+
+// Inputs
+$input-font: $body-font;
+$input-font-weight: $body-font-weight;
+$input-background: #ecf0f1;
+$input-border-color: $border-color;
+$input-color: $body-color;
+$input-padding-x: $margin/2;
+$input-padding-y: $margin/3;
+$input-border-color-hover: $border-color-hover;
+
+// Placeholders
+$placeholder-color: $body-color;
+$placeholder-font: $body-font;
+$placeholder-font-weight: $body-font-weight;
+
+// Buttons
+$button-background: $link-color;
+$button-color: $white;
+$button-font-size: $body-font-size;
+$button-font: $heading-font;
+$button-font-weight: $heading-font-weight;
+$button-padding-y: 16px;
+$button-padding-x: 24px;
+$button-background-hover: darken($link-color, 15);
+$button-color-hover: #fff;
+
+// Table
+$table-margin: 40px;
+$table-border-color: $border-color;
+$table-padding-x: 0px;
+$table-padding-y: 6px;
+$table-heading-font-weight: 400;
+
+// Screen Reader
+$screen-reader-color: $body-color;
+$screen-reader-background: $white;
+$screen-reader-padding: 15px 23px 14px;
+
+// Avatar
+$avatar-margin-left: 24px;
+$avatar-margin-right: 24px;
+$avatar-margin-bottom: 24px;
+
+// Navigation
+$nav-font-size: 16px;
+$nav-color: $body-color;
+$nav-padding-x: $margin;
+$nav-padding-y: $margin/2;
+$nav-color-hover: $link-color;
+
+$subnav-background: $body-color;
+$subnav-border-color: $body-color;
+$subnav-font-size: 16px;
+$subnav-color: $white;
+$subnav-color-hover: $link-color;
+$subnav-padding-x: $margin;
+$subnav-padding-y: $margin/2;
+
+$navextra-color: #fff;
+$navextra-padding-x: 0;
+$navextra-padding-y: $nav-padding-y;
+
+$subnav-border-color-alternate: #eee;
+
+$nav-primary-color: $white;
+$nav-primary-background: $body-color;
+$nav-primary-color-hover: $link-color;
+$nav-primary-subnav-color: $white;
+$nav-primary-subnav-color-hover: $link-color;
+
+$nav-secondary-background: lighten($body-color, 50);
+
+// Entry
+$entry-background: #fff;
+$entry-border-color: #f5f5f5;
+
+// Allowed Tags
+$allowed-tags-background: #f5f5f5;
+
+// Code
+$code-background: $body-color;
+$code-color: #ddd;
+
+// Pagination
+$pagination-color: $white;
+$pagination-background: $body-color;
+$pagination-background-hover: $link-color;
+$pagination-padding-x: 12px;
+$pagination-padding-y: 8px;
+
+// Comments
+$comment-background: $white;
+
+// Footer
+$footer-background: $white;
+$footer-font-size: 14px;
+
+// Sidebar
+$sidebar-border-color: #ddd;
+$sidebar-widget-background: $white;
+
+// Footer Widget
+$footer-widget-font-size: $body-font-size;
+$footer-widget-background: $body-color;
+$footer-widget-color: #aaa;
+$footer-widget-border-color: $body-color;
+$footer-widget-button-color: $white;
+$footer-widget-border-color-alternate: #666;
+
+// Paths
+$image-path: "../images";
+
+// Bourbon & Neat
+$neat-grid: (
+	column: 12,
+	margin: $margin
+);
+
+$medias: (
+    xs: 575px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
+
+$xs: (
+    media: 'only screen and (max-width: 575px)'
+);
+
+$sm-max: (
+    media: 'only screen and (max-width: 767px)'
+);
+
+$sm: (
+    media: map-get($medias, sm)
+);
+
+$md-max: (
+    media: 'only screen and (max-width: 991px)'
+);
+
+$md: (
+    media: map-get($medias, md)
+);
+
+$lg-max: (
+    media: 'only screen and (max-width: 1199px)'
+);
+
+$lg: (
+    media: map-get($medias, lg)
+);
+
+$xl: (
+    media: map-get($medias, xl)
+);

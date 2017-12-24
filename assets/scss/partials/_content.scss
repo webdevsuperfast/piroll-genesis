@@ -1,0 +1,167 @@
+/* ## Content Area
+----------------------------------------------------------------------------- */
+
+.entry {
+	.single & {
+		margin-bottom: $margin;
+	}
+	.archive &, .search &, .blog & {
+		margin-bottom: $margin;
+	}
+}
+
+.entry-content {
+	ol, ul {
+		margin-bottom: $margin;
+		margin-left: $margin;
+	}
+	ol {
+		& > li {
+			list-style-type: decimal;
+		}
+		ol {
+			margin-bottom: 0;
+		}
+	}
+	ul {
+		& > li {
+			list-style-type: disc;
+		}
+		ul {
+			margin-bottom: 0;
+		}
+	}
+	code {
+		background-color: $code-background;
+		color: $code-color;
+	}
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+p {
+	&.entry-meta {
+		@include pixel-rem(14);
+		margin-bottom: 0;
+	}
+}
+
+.entry-meta {
+	.entry-header & {
+		margin-bottom: $margin;
+	}
+	.entry-footer & {
+		padding-top: $margin;
+	}
+}
+
+.entry-categories, .entry-tags {
+	display: block;
+}
+
+.entry-comments-link {
+	&::before {
+		content: "\2014";
+		margin: 0 6px 0 2px;
+	}
+}
+
+.pagination {
+	clear: both;
+	margin: $margin 0;
+}
+
+.adjacent-entry-pagination {
+	margin-bottom: 0;
+}
+
+.archive-pagination {
+	font-size: 0px;
+	li {
+		display: inline-block;
+		a {
+			@include pixel-rem(16, 16);
+			background-color: $pagination-background;
+			color: $pagination-color;
+			cursor: pointer;
+			display: inline-block;
+			margin-right: 5px;
+			padding: $pagination-padding-y $pagination-padding-x;
+			text-decoration: none;
+			&:hover, &:focus {
+				background-color: $pagination-background-hover;
+			}
+		}
+		&.active {
+			a {
+				background-color: $pagination-background-hover;
+			}
+		}
+	}
+}
+
+.comment-respond, .entry-comments, .entry-pings {
+	@include clearfix;
+	margin-bottom: $margin;
+}
+
+.entry-comments {
+	.comment-author {
+		margin-bottom: 0;
+		.says {
+			display: none;
+		}
+	}
+}
+
+.comment-header {
+	@include pixel-rem(16);
+}
+
+li {
+	&.comment {
+		border-right: 0;
+	}
+	ul {
+		margin-left: $margin;
+	}
+}
+
+.comment-content {
+	clear: both;
+	word-wrap: break-word;
+}
+
+.comment-list {
+	li {
+		margin-top: $margin;
+	}
+}
+
+.comment-respond {
+	input[type="email"], input[type="text"], input[type="url"] {
+		@include grid-media($sm) {
+			width: 50%;
+		}
+	}
+	label {
+		display: block;
+		font-weight: $heading-font-weight;
+		margin-right: $margin/2;
+	}
+}
+
+.entry-pings {
+	.reply {
+		display: none;
+	}
+}
+
+.form-allowed-tags {
+	@include pixel-rem(16);
+	background-color: $allowed-tags-background;
+	padding: $margin;
+}

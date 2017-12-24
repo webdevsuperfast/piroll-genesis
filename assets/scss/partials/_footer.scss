@@ -1,0 +1,13 @@
+/* ## Site Footer
+----------------------------------------------------------------------------- */
+
+.site-footer {
+	@include pixel-rem($footer-font-size);
+	background-color: $footer-background;
+	line-height: 1;
+	padding: $margin 0;
+	text-align: center;
+	p {
+		margin-bottom: 0;
+	}
+}

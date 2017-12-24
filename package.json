@@ -1,0 +1,44 @@
+{
+  "name": "piroll-genesis",
+  "version": "0.0.1",
+  "description": "Just another genesis child theme built on Sass and Bourbon.",
+  "repository": "git+https://github.com/webdevsuperfast/piroll-genesis.git",
+  "keywords": [
+    "genesis",
+    "wordpress"
+  ],
+  "author": "Rotsen Mark Acob",
+  "license": "WTFPL",
+  "homepage": "https://github.com/webdevsuperfast/piroll-genesis#readme",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cache": "^1.0.1",
+    "gulp-changed": "^3.1.1",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-flatmap": "^1.0.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-notify": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-wait": "0.0.2",
+    "jshint": "^2.9.5",
+    "merge-stream": "^1.0.1",
+    "run-sequence": "^2.2.0",
+    "vinyl-paths": "^2.1.0"
+  },
+  "dependencies": {
+    "bourbon": "^4.3.4",
+    "bourbon-neat": "2.1.0",
+    "jeet": "^7.2.0",
+    "normalize.css": "^7.0.0",
+    "sass-flex-mixin": "^1.0.3",
+    "webfontloader": "^1.6.28"
+  },
+  "main": "index.js",
+  "private": true
+}
