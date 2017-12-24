@@ -1,5 +1,5 @@
 WebFontConfig = {
-    google: { families: [ 'Source+Sans+Pro:300,300i,400,400i' ] }
+    google: { families: [ 'Montserrat:500,500i|Nunito+Sans:400,400i' ] }
 };
 var $source = webfont.src;
 (function() {
