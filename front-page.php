@@ -12,22 +12,31 @@
 */
 
 //* Home Featured Area
-add_action( 'genesis_after_header', function() {
+add_action( 'pg_page_header', function() {
     if ( ! is_active_sidebar( 'home-featured' ) ) return;
+
+    genesis_widget_area( 'home-featured', array(
+        'before' => '',
+        'after' => ''
+    ) );
+} );
+
+add_action( 'genesis_after_header', function() {
+    if ( ! is_active_sidebar( 'portfolio-area' ) ) return;
 
     genesis_markup( array(
         'open' => '<div %s>',
-        'context' => 'home-featured'
+        'context' => 'portfolio-area'
     ) );
 
-    genesis_widget_area( 'home-featured', array(
-        'before' => '<div class="wrap">',
-        'after' => '</div>'
+    genesis_widget_area( 'portfolio-area', array(
+        'before' => '',
+        'after' => ''
     ) );
 
     genesis_markup( array(
         'close' => '</div>',
-        'context' => 'home-featured'
+        'context' => 'portfolio-area'
     ) );
 } );
 
