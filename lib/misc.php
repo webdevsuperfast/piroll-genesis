@@ -57,3 +57,53 @@ function pg_remove_cssjs_ver( $src ) {
     $src = remove_query_arg( 'ver', $src );
     return $src;
 }
+
+//* Remove default genesis header
+remove_action( 'genesis_header', 'genesis_do_header' );
+
+//* Move primary navigation inside header
+remove_action( 'genesis_after_header', 'genesis_do_nav' );
+add_action( 'genesis_header', 'genesis_do_nav' );
+
+//* Page Header
+add_action( 'genesis_header', 'pg_page_header' );
+function pg_page_header() {
+	do_action( 'pg_page_header' );
+}
+
+add_action( 'pg_page_header', 'pg_page_header_markup_open', 5 );
+function pg_page_header_markup_open() {
+	genesis_markup( array(
+		'open' => '<div %s>',
+		'context' => 'page-header'
+	) );
+
+	genesis_structural_wrap( 'page-header' );
+}
+
+add_action( 'pg_page_header', 'pg_page_header_markup_close', 15 );
+function pg_page_header_markup_close() {
+	genesis_structural_wrap( 'page-header', 'close' );
+	genesis_markup( array(
+		'close' => '</div>',
+		'context' => 'page-header'
+	) );
+}
+
+//* Dynamic Image Resizing
+// @link https://gist.github.com/alpipego/7a60db952c4c4144c0f5d5c15fd86194#file-dynamic-img-loading-php
+add_action( 'wp_ajax_resize_my_image', 'resizeImage' );
+add_action( 'wp_ajax_nopriv_resize_my_image', 'resizeImage' );
+function resizeImage() {
+    // explicit declaration of variables
+    $width = (int) $_GET['width'];
+    $height = (int) $_GET['height'];
+    $url = esc_url($_GET['source']);
+    
+    // call the resize script
+    $img = aq_resize($url, $width, $height);
+    
+    // echo the response
+    echo json_encode(['src' => $img]);
+    wp_die();
+}
