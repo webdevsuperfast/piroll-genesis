@@ -15,13 +15,13 @@
 include_once( get_template_directory() . '/lib/init.php' );
 
 //* Child theme (do not remove)
-define( 'GB_THEME_NAME', 'Piroll Genesis' );
-define( 'GB_THEME_URL', 'http://rotsenacob.com/' );
-define( 'GB_THEME_VERSION', '0.0.1' );
-define( 'GB_LIB', CHILD_DIR . '/lib/' );
-define( 'GB_MODULES', GB_LIB . 'modules/' );
-define( 'GB_JS', CHILD_URL . '/assets/js/' );
-define( 'GB_CSS', CHILD_URL . '/assets/css/' );
+define( 'PG_THEME_NAME', 'Piroll Genesis' );
+define( 'PG_THEME_URL', 'http://rotsenacob.com/' );
+define( 'PG_THEME_VERSION', '0.0.1' );
+define( 'PG_LIB', CHILD_DIR . '/lib/' );
+define( 'PG_MODULES', PG_LIB . 'modules/' );
+define( 'PG_JS', CHILD_URL . '/assets/js/' );
+define( 'PG_CSS', CHILD_URL . '/assets/css/' );
 
 //* Cleanup WP Head
 remove_action( 'wp_head', 'rsd_link' );
@@ -33,14 +33,14 @@ remove_action( 'wp_head', 'adjacent_posts_rel_link' );
 remove_action( 'wp_head', 'wp_shortlink_wp_head' );
 
 //* Remove Query Strings
-add_filter( 'style_loader_src', 'gb_remove_cssjs_ver', 10, 2 );
-add_filter( 'script_loader_src', 'gb_remove_cssjs_ver', 10, 2 );
+add_filter( 'style_loader_src', 'pg_remove_cssjs_ver', 10, 2 );
+add_filter( 'script_loader_src', 'pg_remove_cssjs_ver', 10, 2 );
 
 //* Prevent HTML on Comments
-add_filter( 'preprocess_comment', 'gb_comment_post', '', 1 );
-add_filter( 'comment_text', 'gb_comment_display', '', 1 );
-add_filter( 'comment_text_rss', 'gb_comment_display', '', 1 );
-add_filter( 'comment_excerpt', 'gb_comment_display', '', 1 );
+add_filter( 'preprocess_comment', 'pg_comment_post', '', 1 );
+add_filter( 'comment_text', 'pg_comment_display', '', 1 );
+add_filter( 'comment_text_rss', 'pg_comment_display', '', 1 );
+add_filter( 'comment_excerpt', 'pg_comment_display', '', 1 );
 
 //* This stops WordPress from trying to automatically make hyperlinks on text:
 remove_filter( 'comment_text', 'make_clickable', 9 );
@@ -52,14 +52,14 @@ add_filter ( 'genesis_edit_post_link' , '__return_false' );
 add_filter( 'login_errors', create_function( '$a', "return null;" ) );
 
 //* Unregister site layouts
-// genesis_unregister_layout( 'content-sidebar-sidebar' );
-// genesis_unregister_layout( 'sidebar-sidebar-content' );
-// genesis_unregister_layout( 'sidebar-content-sidebar' );
-// genesis_unregister_layout( 'sidebar-content' );
+genesis_unregister_layout( 'content-sidebar-sidebar' );
+genesis_unregister_layout( 'sidebar-sidebar-content' );
+genesis_unregister_layout( 'sidebar-content-sidebar' );
+genesis_unregister_layout( 'sidebar-content' );
 
 //* Unregister unneeded sidebars
-// unregister_sidebar( 'header-right' );
-// unregister_sidebar( 'sidebar-alt' );
+unregister_sidebar( 'header-right' );
+unregister_sidebar( 'sidebar-alt' );
 
 //* Add HTML5 markup structure
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
@@ -74,7 +74,7 @@ add_theme_support( 'genesis-responsive-viewport' );
 // add_theme_support( 'custom-background' );
 
 //* Add support for 3-column footer widgets
-add_theme_support( 'genesis-footer-widgets', 3 );
+// add_theme_support( 'genesis-footer-widgets', 3 );
 
 //* Disable the superfish script
 add_filter( 'genesis_superfish_enabled', '__return_false' );
@@ -97,6 +97,14 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 // Move the secondary navigation
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_before_header', 'genesis_do_subnav' );
+
+//* Add Kirki Helpers
+foreach( glob( dirname( __FILE__ ) . '/lib/modules/kirki-helpers/*.php' ) as $file ) {
+	require_once $file;
+}
+
+//* Add TGM Plugin Activation
+require_once( PG_MODULES . 'tgm-plugin-activation/class-tgm-plugin-activation.php' );
 
 //* Include php files from lib folder
 //* @link https://gist.github.com/theandystratton/5924570
