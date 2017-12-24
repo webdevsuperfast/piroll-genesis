@@ -12,15 +12,15 @@
 */
 
 // Theme Scripts & Stylesheet
-add_action( 'wp_enqueue_scripts', 'gb_theme_scripts' );
-function gb_theme_scripts() {
+add_action( 'wp_enqueue_scripts', 'pg_theme_scripts' );
+function pg_theme_scripts() {
 	$version = wp_get_theme()->Version;
 	if ( !is_admin() ) {
 		// Dashicons
 		wp_enqueue_style( 'dashicons' );
 
 		// Responsive Menu
-		wp_register_script( 'app-menu-js', GB_JS . 'responsive-menus.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'app-menu-js', PG_JS . 'responsive-menus.min.js', array( 'jquery' ), $version, true );
 		wp_enqueue_script( 'app-menu-js' );
 
 		$menu_settings = array(
@@ -39,11 +39,11 @@ function gb_theme_scripts() {
 		wp_localize_script( 'app-menu-js', 'genesis_responsive_menu', $menu_settings );
 
 		// Theme JS
-		wp_register_script( 'app-js', GB_JS . 'app.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'app-js', PG_JS . 'app.min.js', array( 'jquery' ), $version, true );
 		wp_enqueue_script( 'app-js' );
 
 		$webfont = array(
-			'src' => 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js' // GB_JS . 'webfontloader.min.js'
+			'src' => 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js' // PG_JS . 'webfontloader.min.js'
 		);
 
 		wp_localize_script( 'app-js', 'webfont', $webfont );
@@ -53,6 +53,6 @@ function gb_theme_scripts() {
 		wp_deregister_script( 'superfish-args' );
 
 		// Theme CSS
-		wp_enqueue_style( 'app-css', GB_CSS . 'app.css' );
+		wp_enqueue_style( 'app-css', PG_CSS . 'app.css' );
 	}
 }
