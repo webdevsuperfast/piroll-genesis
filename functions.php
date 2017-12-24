@@ -76,6 +76,13 @@ add_theme_support( 'genesis-responsive-viewport' );
 //* Add support for 3-column footer widgets
 // add_theme_support( 'genesis-footer-widgets', 3 );
 
+//* Modify default structural wraps
+add_theme_support( 'genesis-structural-wraps', array(
+	'page-header',
+	'footer-widgets',
+	'menu-primary'
+) );
+
 //* Disable the superfish script
 add_filter( 'genesis_superfish_enabled', '__return_false' );
 
@@ -94,14 +101,17 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
-// Move the secondary navigation
+// Remove the secondary navigation
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-add_action( 'genesis_before_header', 'genesis_do_subnav' );
+// add_action( 'genesis_before_header', 'genesis_do_subnav' );
 
 //* Add Kirki Helpers
 foreach( glob( dirname( __FILE__ ) . '/lib/modules/kirki-helpers/*.php' ) as $file ) {
 	require_once $file;
 }
+
+//* Add AQ Resizer
+require_once( PG_MODULES . 'aq_resizer.php' );
 
 //* Add TGM Plugin Activation
 require_once( PG_MODULES . 'tgm-plugin-activation/class-tgm-plugin-activation.php' );
