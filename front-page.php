@@ -11,6 +11,17 @@
  *
 */
 
+// Remove Markup
+add_filter( 'genesis_markup_site-inner', '__return_null' );
+add_filter( 'genesis_markup_content-sidebar-wrap_output', '__return_false' );
+add_filter( 'genesis_markup_content', '__return_null' );
+add_filter( 'genesis_markup_content-sidebar-wrap', '__return_null' );
+add_filter( 'genesis_markup_entry', '__return_null' );
+add_filter( 'genesis_markup_sidebar-primary', '__return_null' );
+
+//* Remove Loop
+remove_action( 'genesis_loop', 'genesis_do_loop' );
+
 //* Home Featured Area
 add_action( 'pg_page_header', function() {
     if ( ! is_active_sidebar( 'home-featured' ) ) return;
