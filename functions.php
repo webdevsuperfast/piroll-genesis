@@ -56,10 +56,12 @@ genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
 genesis_unregister_layout( 'sidebar-content' );
+genesis_unregister_layout( 'content-sidebar' );
 
 //* Unregister unneeded sidebars
 unregister_sidebar( 'header-right' );
 unregister_sidebar( 'sidebar-alt' );
+unregister_sidebar( 'sidebar' );
 
 //* Add HTML5 markup structure
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
