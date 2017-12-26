@@ -19,6 +19,12 @@ add_filter( 'genesis_markup_content-sidebar-wrap', '__return_null' );
 add_filter( 'genesis_markup_entry', '__return_null' );
 add_filter( 'genesis_markup_sidebar-primary', '__return_null' );
 
+//* Remove primary sidebar
+remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
+
+//* Remove secondary sidebar
+remove_action( 'genesis_sidebar_alt', 'genesis_do_sidebar_alt' );
+
 //* Remove Loop
 remove_action( 'genesis_loop', 'genesis_do_loop' );
 
