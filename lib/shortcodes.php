@@ -51,7 +51,8 @@ add_shortcode( 'portfolio', function( $atts, $content = null ) {
         echo '<div '; foreach( $attrs as $attr => $value ) echo $attr . '="' . $value .'" '; echo '>';
         while ( $loop->have_posts() ) : $loop->the_post();
             echo '<figure '; post_class(); echo '>';
-                echo '<img class="portfolio-image" src="'.get_stylesheet_directory_uri() . '/images/spacer.gif' . '" alt="'.get_the_title().'" data-src="'.get_the_post_thumbnail_url( get_the_ID(), 'full' ).'" />';
+                // echo '<img class="portfolio-image" src="'.get_stylesheet_directory_uri() . '/images/spacer.gif' . '" alt="'.get_the_title().'" data-src="'.get_the_post_thumbnail_url( get_the_ID(), 'full' ).'" />';
+                echo '<img src="'.get_the_post_thumbnail_url( get_the_ID(), 'full' ).'" alt="'.get_the_title().'" class="portfolio-image" />';
                 echo '<a href="'.get_permalink().'"></a>';
             echo '</figure>';
         endwhile;

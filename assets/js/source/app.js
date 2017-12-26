@@ -18,8 +18,8 @@ var $source = webfont.src;
 		
 		// Dynamic Image Sizing
 		ajaxurl = webfont.ajaxurl;
-		console.log(ajaxurl);
-		$('.portfolio-image').each(function() {
+		// console.log(ajaxurl);
+		/* $('.portfolio-image').each(function() {
 			// get the image ratio
 			var ratio = new Image();
 			ratio.src = $(this).data('src');
@@ -39,7 +39,7 @@ var $source = webfont.src;
 				// console.log(response);
 				targetEl.attr('src', response.src);
 			});
-		});
+		}); */
 	});
 
 	// Window load event with minimum delay
